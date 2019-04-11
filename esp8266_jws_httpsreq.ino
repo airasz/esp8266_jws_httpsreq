@@ -269,8 +269,12 @@ void loop() {
         testdrawtext(string2char(txtft), ST77XX_GREEN);
       }else if(rnd==2){
         testdrawtext(string2char(txtft), ST77XX_RED);
-      }else if(rnd>2){
-        testdrawtext(string2char(txtft), ST77XX_BLUE);
+      }else if(rnd==3){
+        testdrawtext(string2char(txtft), ST77XX_CYAN);
+      }else if(rnd==4){
+        testdrawtext(string2char(txtft), ST77XX_YELLOW);
+      }else if(rnd>4){
+        testdrawtext(string2char(txtft), ST77XX_MAGENTA);
       }
       } else {BLstate=0;}
       digitalWrite(pinBL, BLstate);
@@ -278,3 +282,13 @@ void loop() {
     prevmillis=millis();
   }
 }
+
+// // Color definitions
+// #define	ST77XX_BLACK   0x0000
+// #define	ST77XX_BLUE    0x001F
+// #define	ST77XX_RED     0xF800
+// #define	ST77XX_GREEN   0x07E0
+// #define ST77XX_CYAN    0x07FF
+// #define ST77XX_MAGENTA 0xF81F
+// #define ST77XX_YELLOW  0xFFE0
+// #define ST77XX_WHITE   0xFFFF
