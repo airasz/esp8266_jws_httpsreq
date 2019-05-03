@@ -16,6 +16,14 @@ config: board: generic esp8266 1st index
 
 
 */
+//nodemcu   tft 
+//  D0      RST
+//  D1      CS
+//  D2      SDA
+//  D3      SCK
+//  D4      RS
+
+
 
 // this line add in windows
 
@@ -26,6 +34,7 @@ config: board: generic esp8266 1st index
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
 #include <SPI.h>
+#include "colorconverter.h"
 
 #define TFT_CS     5
 #define TFT_RST    16  // you can also connect this to the Arduino reset
@@ -68,6 +77,11 @@ void setup() {
 
   tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
   tft.fillScreen(ST77XX_BLACK);
+  
+  // int color =random(0x000000,0xFFFFFF);
+  int color =random(0xFFFFFF);
+  Serial.print("color = ");
+  Serial.println(color,HEX);
   tftsetlog("starting jadwal solat");
   tftsetlog("connecting to "+ String(ssid));
   Serial.print("connecting to ");
